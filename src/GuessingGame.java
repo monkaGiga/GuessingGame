@@ -26,15 +26,19 @@ public class GuessingGame {
                 double ans = Math.ceil(Math.random() * 10);
                 System.out.println("Your range of numbers is from 1 to 10, Good luck "+ name);
                 int guess = 0;
-                while (guess != ans) {
+                while (guess != ans)
+                {
                     guess = input.nextInt();
-                    if (guess == ans) {
+                    if (guess == ans)
+                    {
                         System.out.println("That's right, Good job " + name);
                     }
-                    if (guess < ans) {
+                    if (guess < ans)
+                    {
                         System.out.println("That's not right, try a little higher this time");
                     }
-                    if (guess > ans) {
+                    if (guess > ans)
+                    {
                         System.out.println("That's not right, try a little lower this time");
                     }
                 }
@@ -43,15 +47,19 @@ public class GuessingGame {
                 double ans = Math.ceil(Math.random() * 100);
                 System.out.println("Your range of numbers is from 1 to 100, Good luck " + name);
                 int guess = 0;
-                while (guess != ans) {
+                while (guess != ans)
+                {
                     guess = input.nextInt();
-                    if (guess == ans) {
+                    if (guess == ans)
+                    {
                         System.out.println("That's right, Good job " + name);
                     }
-                    if (guess < ans) {
+                    if (guess < ans)
+                    {
                         System.out.println("That's not right, try a little higher this time");
                     }
-                    if (guess > ans) {
+                    if (guess > ans)
+                    {
                         System.out.println("That's not right, try a little lower this time");
                     }
                 }
@@ -60,15 +68,19 @@ public class GuessingGame {
                 double ans = Math.ceil(Math.random() * 1000);
                 System.out.println("Your range of numbers is from 1 to 1000, Good luck " + name);
                 int guess = 0;
-                while (guess != ans) {
+                while (guess != ans)
+                {
                     guess = input.nextInt();
-                    if (guess == ans) {
+                    if (guess == ans)
+                    {
                         System.out.println("That's right, Good job " + name);
                     }
-                    if (guess < ans) {
+                    if (guess < ans)
+                    {
                         System.out.println("That's not right, try a little higher this time");
                     }
-                    if (guess > ans) {
+                    if (guess > ans)
+                    {
                         System.out.println("That's not right, try a little lower this time");
                     }
                 }
@@ -79,13 +91,16 @@ public class GuessingGame {
                 int guess = 0;
                 while (guess != ans) {
                     guess = input.nextInt();
-                    if (guess == ans) {
+                    if (guess == ans)
+                    {
                         System.out.println("That's right, Good job " + name);
                     }
-                    if (guess < ans) {
+                    if (guess < ans)
+                    {
                         System.out.println("That's not right, try a little higher this time");
                     }
-                    if (guess > ans) {
+                    if (guess > ans)
+                    {
                         System.out.println("That's not right, try a little lower this time");
                     }
                 }
@@ -93,23 +108,44 @@ public class GuessingGame {
         }
         if (mode.equals("2"))
         {
-            int guess = (int) Math.ceil(Math.random() * 100);
             System.out.println("Pick a number from 1 to 100");
-            String ans = input.nextLine();
-            System.out.println("Your number is " + ans);
+            String targ = input.nextLine();
+            System.out.println("Your number is " + targ);
             System.out.println("As i guess type higher if my guess is too low");
             System.out.println("lower if my guess is too high");
             System.out.println("and correct if my answer is correct");
-            System.out.println("Is your number " + guess + "?");
+            System.out.println("Is your number 50?");
+            int guess = 50;
+            int ciel = 100;
+            int floor = 0;
             String res = input.nextLine();
-            while (res != "correct")
+            while (res != "correct" )
             {
-                if (res.equals("higher")) {
-                    guess = (int) (Math.random() * ((100 - guess) + 1 )) + guess;
-                    System.out.println("Is your number " + guess);
+                if (res.equals("correct"))
+                {
+
+                    System.out.println("Thanks for playing " + name);
+                    res = "ncorrect";
+
+                }
+                if (res.equals("higher"))
+                {
+                    floor = guess;
+                    guess = (floor + ciel)/2;
+                    System.out.println("Is your number " + guess + "?");
                     res = input.nextLine();
                 }
+                if (res.equals("lower"))
+                {
+                    ciel = guess;
+                    guess = (floor + ciel)/2;
+                    System.out.println("Is your number " + guess + "?");
+                    res = input.nextLine();
+                }
+
+
             }
+
 
 
 
